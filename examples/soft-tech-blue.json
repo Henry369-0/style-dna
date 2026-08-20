@@ -1,0 +1,80 @@
+{
+  "style_name": "Soft Tech Blue",
+  "media_type": "Web UI",
+  "confidence": "high",
+  "content_summary": [
+    "Product headline",
+    "Interactive product card",
+    "Feature labels"
+  ],
+  "snapshot": [
+    "Soft tech",
+    "Luminous blue",
+    "Layered",
+    "Rounded restraint",
+    "Quiet depth"
+  ],
+  "composition": {
+    "structure": "Centered hero with one dominant floating product surface",
+    "alignment": "Centered macro-layout; left aligned text inside components",
+    "whitespace": "High outer whitespace with tighter component interiors",
+    "density": "Low-medium visual density",
+    "focal_points": "Product surface first, headline second, supporting controls third",
+    "spatial_rhythm": "Broad empty fields interrupted by compact information islands"
+  },
+  "color": {
+    "temperature": "Cool",
+    "saturation": "Medium-low",
+    "contrast": "Soft",
+    "strategy": "Mist blue canvas + inky text + electric blue used as a controlled focal glow",
+    "palette": [
+      "#E8F0F8",
+      "#17212B",
+      "#6E8396",
+      "#4A82FF",
+      "#F8FBFF"
+    ]
+  },
+  "typography": {
+    "headline": "Large modern sans-serif with slightly condensed spacing",
+    "body": "Clean humanist sans-serif; soft grey supporting text",
+    "hierarchy": "Size first, weight second, color last",
+    "alignment": "Centered hero / left aligned interface copy",
+    "confidence": "high"
+  },
+  "texture": {
+    "base": "Very subtle luminous haze",
+    "finish": "Soft digital glass without obvious gloss",
+    "image_treatment": "Diffused highlights, restrained blur, no hard HDR"
+  },
+  "hierarchy": [
+    "Hero product surface",
+    "Headline",
+    "Primary action",
+    "Feature labels",
+    "Ambient background"
+  ],
+  "mood": [
+    {
+      "label": "Friendly",
+      "because": "soft contrast + open spacing + restrained radius"
+    },
+    {
+      "label": "Futuristic",
+      "because": "luminous blue depth + floating layered surfaces"
+    },
+    {
+      "label": "Trustworthy",
+      "because": "limited palette + controlled hierarchy"
+    }
+  ],
+  "avoid": [
+    "Neon rainbow glow",
+    "Over-blurred glassmorphism",
+    "Huge pill buttons",
+    "Purple-pink gradients",
+    "Excessive floating orbs",
+    "Glossy 3D icons"
+  ],
+  "why_it_works": "The interface feels futuristic without becoming flashy. Depth is created with very soft tonal shifts instead of loud glass effects, and the bright blue is concentrated around the main product surface so attention remains controlled."
+}

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:style-dna:schema:v1",
+  "title": "Style DNA",
+  "type": "object",
+  "required": [
+    "style_name",
+    "media_type",
+    "confidence",
+    "content_summary",
+    "snapshot",
+    "composition",
+    "color",
+    "typography",
+    "texture",
+    "hierarchy",
+    "mood",
+    "avoid",
+    "why_it_works"
+  ],
+  "properties": {
+    "style_name": {
+      "type": "string"
+    },
+    "media_type": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "content_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 6
+    },
+    "snapshot": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 7,
+      "items": {
+        "type": "string"
+      }
+    },
+    "composition": {
+      "type": "object",
+      "required": [
+        "structure",
+        "alignment",
+        "whitespace",
+        "density",
+        "focal_points",
+        "spatial_rhythm"
+      ],
+      "properties": {
+        "structure": {
+          "type": "string"
+        },
+        "alignment": {
+          "type": "string"
+        },
+        "whitespace": {
+          "type": "string"
+        },
+        "density": {
+          "type": "string"
+        },
+        "focal_points": {
+          "type": "string"
+        },
+        "spatial_rhythm": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "color": {
+      "type": "object",
+      "required": [
+        "temperature",
+        "saturation",
+        "contrast",
+        "strategy",
+        "palette"
+      ],
+      "properties": {
+        "temperature": {
+          "type": "string"
+        },
+        "saturation": {
+          "type": "string"
+        },
+        "contrast": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        },
+        "palette": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "typography": {
+      "type": "object",
+      "required": [
+        "headline",
+        "body",
+        "hierarchy",
+        "alignment",
+        "confidence"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "hierarchy": {
+          "type": "string"
+        },
+        "alignment": {
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "texture": {
+      "type": "object",
+      "required": [
+        "base",
+        "finish",
+        "image_treatment"
+      ],
+      "properties": {
+        "base": {
+          "type": "string"
+        },
+        "finish": {
+          "type": "string"
+        },
+        "image_treatment": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hierarchy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 3,
+      "maxItems": 8
+    },
+    "mood": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "because"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "because": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 5
+    },
+    "avoid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 12
+    },
+    "why_it_works": {
+      "type": "string"
+    }
+  },
+  "description": "Canonical structured representation of reusable visual style rules extracted from a reference image.",
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620">
+  <rect width="1500" height="620" fill="#F2EEE4"/>
+  <text x="66" y="70" font-family="Arial" font-size="14" letter-spacing="3" fill="#6D7069">HOW STYLE DNA WORKS</text>
+  <text x="66" y="132" font-family="Georgia" font-size="50" fill="#1B201D">Deterministic facts + visual reasoning.</text>
+  <g font-family="Arial">
+    <rect x="66" y="210" width="260" height="236" fill="#FBF8F0" stroke="#1B201D"/>
+    <text x="92" y="248" font-size="11" letter-spacing="2" fill="#6D7069">01 / REFERENCE</text>
+    <rect x="92" y="278" width="208" height="122" fill="#D9D1C3"/><rect x="138" y="301" width="118" height="76" fill="#82969C"/><circle cx="232" cy="338" r="18" fill="#C5A04B"/>
+    <text x="92" y="426" font-size="12" fill="#6D7069">Poster · slide · UI · chart · photo</text>
+
+    <rect x="420" y="210" width="282" height="236" fill="#FBF8F0" stroke="#1B201D"/>
+    <text x="446" y="248" font-size="11" letter-spacing="2" fill="#6D7069">02 / BROWSER FACTS</text>
+    <text x="446" y="304" font-size="22" font-weight="700" fill="#1B201D">Dimensions</text><text x="446" y="342" font-size="22" font-weight="700" fill="#1B201D">Aspect ratio</text><text x="446" y="380" font-size="22" font-weight="700" fill="#1B201D">Coarse palette</text>
+    <text x="446" y="426" font-size="12" fill="#6D7069">Code handles what can be measured.</text>
+
+    <rect x="796" y="210" width="282" height="236" fill="#C9FF48" stroke="#1B201D"/>
+    <text x="822" y="248" font-size="11" letter-spacing="2" fill="#1B201D">03 / VISION REASONING</text>
+    <text x="822" y="304" font-size="22" font-weight="700" fill="#1B201D">Content ≠ Style</text><text x="822" y="342" font-size="22" font-weight="700" fill="#1B201D">Why it works</text><text x="822" y="380" font-size="22" font-weight="700" fill="#1B201D">Executable rules</text>
+    <text x="822" y="426" font-size="12" fill="#1B201D">AI handles visual judgment.</text>
+
+    <rect x="1172" y="210" width="262" height="236" fill="#222824"/>
+    <text x="1198" y="248" font-size="11" letter-spacing="2" fill="#AEB2AB">04 / STYLE DNA</text>
+    <text x="1198" y="304" font-size="20" font-weight="700" fill="#FFFDF7">Snapshot</text><text x="1198" y="340" font-size="20" font-weight="700" fill="#FFFDF7">Human brief</text><text x="1198" y="376" font-size="20" font-weight="700" fill="#FFFDF7">JSON + prompt</text>
+    <text x="1198" y="426" font-size="12" fill="#AEB2AB">One contract, many surfaces.</text>
+  </g>
+  <g stroke="#1B201D" stroke-width="1.5" fill="none"><path d="M326 328h78"/><path d="M390 319l14 9-14 9"/><path d="M702 328h78"/><path d="M766 319l14 9-14 9"/><path d="M1078 328h78"/><path d="M1142 319l14 9-14 9"/></g>
+  <text x="66" y="532" font-family="Georgia" font-size="30" fill="#1B201D">The model is a capability. The protocol makes it a product.</text>
+</svg>

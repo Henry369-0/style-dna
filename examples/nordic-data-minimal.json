@@ -1,0 +1,80 @@
+{
+  "style_name": "Nordic Data Minimal",
+  "media_type": "Dashboard",
+  "confidence": "high",
+  "content_summary": [
+    "Performance metrics",
+    "Trend chart",
+    "Category breakdown"
+  ],
+  "snapshot": [
+    "Analytical",
+    "Cool neutral",
+    "Grid-led",
+    "Airy density",
+    "Precise accent"
+  ],
+  "composition": {
+    "structure": "Strict modular grid with one oversized KPI anchor",
+    "alignment": "Left aligned text with chart baselines locked to a shared grid",
+    "whitespace": "High between modules, compact within data groups",
+    "density": "Medium information density with low decorative density",
+    "focal_points": "Primary KPI first, trend line second, supporting cards third",
+    "spatial_rhythm": "Consistent 8/16/32 spacing rhythm creates disciplined pacing"
+  },
+  "color": {
+    "temperature": "Cool-neutral",
+    "saturation": "Low",
+    "contrast": "Medium-high",
+    "strategy": "Soft grey canvas + near-black type + one cobalt signal color",
+    "palette": [
+      "#F4F6F5",
+      "#151A1D",
+      "#8A959B",
+      "#2E68FF",
+      "#DDE3E2"
+    ]
+  },
+  "typography": {
+    "headline": "Large neo-grotesk numerals; compact and technical",
+    "body": "Neutral sans-serif with tabular-feeling labels",
+    "hierarchy": "Scale and weight, not decoration, create hierarchy",
+    "alignment": "Left aligned with numeric columns visually aligned",
+    "confidence": "high"
+  },
+  "texture": {
+    "base": "None; clean digital surface",
+    "finish": "Flat and precise",
+    "image_treatment": "Charts use crisp strokes and restrained labels"
+  },
+  "hierarchy": [
+    "Primary KPI",
+    "Trend movement",
+    "Supporting metrics",
+    "Category detail",
+    "Annotations"
+  ],
+  "mood": [
+    {
+      "label": "Analytical",
+      "because": "strict grid + aligned numerals + low decoration"
+    },
+    {
+      "label": "Calm",
+      "because": "wide module spacing prevents dashboard compression"
+    },
+    {
+      "label": "Modern",
+      "because": "neutral surfaces + one functional signal color"
+    }
+  ],
+  "avoid": [
+    "Rainbow charts",
+    "Heavy card shadows",
+    "Oversized rounded pills",
+    "Decorative gradients",
+    "Dense chart labels",
+    "Multiple accent colors"
+  ],
+  "why_it_works": "The dashboard looks disciplined because every visual choice supports comparison. Large numbers create a fast entry point, repeated alignment makes scanning effortless, and the single cobalt accent is reserved for information that deserves attention."
+}

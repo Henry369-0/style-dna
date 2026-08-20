@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F2EEE4"/>
+  <circle cx="1330" cy="145" r="190" fill="#C9FF48" fill-opacity=".33"/>
+  <text x="84" y="82" font-family="Arial" font-size="18" font-weight="700" letter-spacing="4" fill="#6D7069">VISUAL REQUIREMENT TRANSLATOR / OPEN SOURCE</text>
+  <text x="84" y="214" font-family="Georgia" font-size="112" letter-spacing="-6" fill="#1B201D">See the style.</text>
+  <text x="84" y="316" font-family="Georgia" font-size="112" font-style="italic" letter-spacing="-6" fill="none" stroke="#1B201D" stroke-width="1.4">Understand the system.</text>
+  <text x="84" y="418" font-family="Georgia" font-size="112" letter-spacing="-6" fill="#1B201D">Reuse the DNA.</text>
+  <text x="88" y="490" font-family="Arial" font-size="22" fill="#6D7069">Reference image → visual rules → structured DNA → reusable prompt</text>
+
+  <g transform="translate(86 570) rotate(-4)">
+    <rect width="250" height="270" fill="#F8F4EA" stroke="#1B201D"/>
+    <text x="24" y="38" font-family="Arial" font-size="10" letter-spacing="2" fill="#7A838A">REFERENCE 01</text>
+    <text x="24" y="108" font-family="Georgia" font-size="38" fill="#243447">Quiet</text><text x="24" y="147" font-family="Georgia" font-size="38" fill="#243447">Editorial</text>
+    <rect x="112" y="164" width="106" height="78" fill="#83979C"/><circle cx="190" cy="201" r="18" fill="#C5A04B"/>
+  </g>
+  <g transform="translate(300 540) rotate(3)">
+    <rect width="250" height="290" fill="#F5F7F6" stroke="#1B201D"/>
+    <text x="24" y="38" font-family="Arial" font-size="10" letter-spacing="2" fill="#8A959B">REFERENCE 02</text>
+    <text x="24" y="110" font-family="Arial" font-size="46" font-weight="800" fill="#151A1D">4.82M</text>
+    <path d="M24 194 C68 164 92 190 128 150 S188 138 224 108" fill="none" stroke="#2E68FF" stroke-width="6"/>
+    <text x="24" y="254" font-family="Arial" font-size="12" fill="#8A959B">NORDIC DATA MINIMAL</text>
+  </g>
+  <g transform="translate(520 582) rotate(-2)">
+    <rect width="250" height="250" rx="18" fill="#E8F0F8" stroke="#1B201D"/>
+    <text x="24" y="38" font-family="Arial" font-size="10" letter-spacing="2" fill="#6E8396">REFERENCE 03</text>
+    <rect x="24" y="70" width="202" height="112" rx="18" fill="#17212B"/><circle cx="198" cy="98" r="24" fill="#4A82FF" fill-opacity=".75"/>
+    <text x="42" y="117" font-family="Arial" font-size="19" font-weight="700" fill="#F8FBFF">Less noise.</text><text x="42" y="143" font-family="Arial" font-size="19" font-weight="700" fill="#F8FBFF">More signal.</text>
+    <text x="24" y="218" font-family="Arial" font-size="12" fill="#6E8396">SOFT TECH BLUE</text>
+  </g>
+
+  <g transform="translate(892 542)">
+    <rect width="616" height="300" fill="#222824"/>
+    <text x="34" y="42" font-family="Arial" font-size="11" letter-spacing="3" fill="#B7BBB4">STYLE / DNA</text>
+    <text x="34" y="104" font-family="Georgia" font-size="36" fill="#FFFDF7">Visual rules, not visual copying.</text>
+    <g transform="translate(34 146)"><rect width="92" height="25" fill="#F2EEE5"/><rect x="92" width="92" height="25" fill="#243447"/><rect x="184" width="92" height="25" fill="#7A838A"/><rect x="276" width="92" height="25" fill="#C5A04B"/></g>
+    <text x="34" y="214" font-family="Arial" font-size="12" fill="#ADB1AB">COMPOSITION  ·  COLOR  ·  TYPE  ·  TEXTURE  ·  HIERARCHY  ·  AVOID</text>
+    <rect x="34" y="246" width="154" height="32" fill="#C9FF48"/><text x="111" y="267" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#1B201D">REUSABLE PROMPT</text>
+    <rect x="202" y="246" width="116" height="32" fill="none" stroke="#7E857E"/><text x="260" y="267" text-anchor="middle" font-family="Arial" font-size="11" fill="#D5D8D2">JSON</text>
+  </g>
+</svg>

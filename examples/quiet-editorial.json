@@ -1,0 +1,80 @@
+{
+  "style_name": "Quiet Editorial",
+  "media_type": "Poster",
+  "confidence": "high",
+  "content_summary": [
+    "Architectural photograph",
+    "Travel title",
+    "Small editorial metadata"
+  ],
+  "snapshot": [
+    "Editorial",
+    "Warm neutral",
+    "Asymmetric",
+    "High whitespace",
+    "Restrained accent"
+  ],
+  "composition": {
+    "structure": "Asymmetric editorial grid",
+    "alignment": "Strong left alignment with an offset image block",
+    "whitespace": "High — large outer margins and generous subject breathing room",
+    "density": "Medium-low visual density; information remains compact",
+    "focal_points": "One dominant headline, then the image",
+    "spatial_rhythm": "Large-to-small spacing contrast creates a calm reading tempo"
+  },
+  "color": {
+    "temperature": "Warm-neutral",
+    "saturation": "Low",
+    "contrast": "Medium",
+    "strategy": "Warm ivory field + muted navy text + one mustard accent",
+    "palette": [
+      "#F2EEE5",
+      "#243447",
+      "#7A838A",
+      "#C5A04B",
+      "#D9D1C3"
+    ]
+  },
+  "typography": {
+    "headline": "Large editorial serif; high stroke contrast; confident scale",
+    "body": "Small modern sans-serif; regular weight; restrained tracking",
+    "hierarchy": "Strong size contrast between display type and metadata",
+    "alignment": "Left aligned",
+    "confidence": "high"
+  },
+  "texture": {
+    "base": "Subtle paper grain",
+    "finish": "Matte, slightly printed",
+    "image_treatment": "Soft contrast, muted saturation, restrained sharpness"
+  },
+  "hierarchy": [
+    "Main headline",
+    "Hero image",
+    "Accent marker",
+    "Supporting copy",
+    "Footer metadata"
+  ],
+  "mood": [
+    {
+      "label": "Calm",
+      "because": "low saturation + generous whitespace + soft contrast"
+    },
+    {
+      "label": "Premium",
+      "because": "controlled palette + strong typographic hierarchy"
+    },
+    {
+      "label": "Editorial",
+      "because": "asymmetric grid + serif display type + print-like texture"
+    }
+  ],
+  "avoid": [
+    "Neon colors",
+    "Heavy gradients",
+    "Plastic 3D",
+    "Over-sharpening",
+    "Large glossy cards",
+    "Excessive glow"
+  ],
+  "why_it_works": "The design feels premium because it is restrained rather than decorative. A limited warm-neutral palette keeps visual noise low, while the oversized serif headline establishes an immediate hierarchy. The asymmetric grid prevents the page from feeling generic, and generous negative space gives both the type and image room to breathe."
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="720" viewBox="0 0 1500 720">
+  <rect width="1500" height="720" fill="#F2EEE4"/>
+  <text x="66" y="70" font-family="Arial" font-size="14" letter-spacing="3" fill="#6D7069">CROSS-MEDIUM STYLE TRANSLATION</text>
+  <text x="66" y="132" font-family="Georgia" font-size="50" fill="#1B201D">One DNA. Four different surfaces.</text>
+  <g transform="translate(66 202)">
+    <rect width="316" height="380" fill="#FBF8F0" stroke="#1B201D"/><text x="24" y="36" font-family="Arial" font-size="10" letter-spacing="2" fill="#7A838A">POSTER</text><text x="24" y="112" font-family="Georgia" font-size="42" fill="#243447">Shanghai</text><text x="24" y="154" font-family="Georgia" font-size="42" fill="#243447">after rain.</text><rect x="170" y="188" width="112" height="128" fill="#82969C"/><circle cx="248" cy="250" r="18" fill="#C5A04B"/>
+  </g>
+  <g transform="translate(416 202)">
+    <rect width="316" height="380" fill="#FBF8F0" stroke="#1B201D"/><text x="24" y="36" font-family="Arial" font-size="10" letter-spacing="2" fill="#7A838A">SLIDES</text><text x="24" y="104" font-family="Georgia" font-size="34" fill="#243447">Growth is</text><text x="24" y="138" font-family="Georgia" font-size="34" fill="#243447">broadening.</text><rect x="24" y="188" width="112" height="90" fill="#243447"/><text x="42" y="232" font-family="Georgia" font-size="30" fill="#F2EEE5">+18%</text><path d="M160 268 C190 230 216 248 242 214 S274 194 292 204" fill="none" stroke="#C5A04B" stroke-width="6"/>
+  </g>
+  <g transform="translate(766 202)">
+    <rect width="316" height="380" fill="#FBF8F0" stroke="#1B201D"/><text x="24" y="36" font-family="Arial" font-size="10" letter-spacing="2" fill="#7A838A">WEB</text><text x="24" y="108" font-family="Georgia" font-size="35" fill="#243447">The city,</text><text x="24" y="144" font-family="Georgia" font-size="35" fill="#243447">edited slowly.</text><rect x="24" y="204" width="92" height="34" fill="#243447"/><rect x="184" y="176" width="98" height="134" fill="#82969C"/><rect x="258" y="324" width="24" height="24" fill="#C5A04B"/>
+  </g>
+  <g transform="translate(1116 202)">
+    <rect width="316" height="380" fill="#FBF8F0" stroke="#1B201D"/><text x="24" y="36" font-family="Arial" font-size="10" letter-spacing="2" fill="#7A838A">CHARTS</text><text x="24" y="104" font-family="Georgia" font-size="34" fill="#243447">Signal, not</text><text x="24" y="138" font-family="Georgia" font-size="34" fill="#243447">decoration.</text><path d="M34 286 C78 270 104 288 144 244 S222 220 276 184" fill="none" stroke="#243447" stroke-width="6"/><circle cx="276" cy="184" r="12" fill="#C5A04B"/>
+  </g>
+  <text x="66" y="646" font-family="Arial" font-size="14" fill="#6D7069">The rule moves. The literal reference does not.</text>
+</svg>

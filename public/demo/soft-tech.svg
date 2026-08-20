@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="58%"><stop offset="0" stop-color="#BFD5FF"/><stop offset="0.45" stop-color="#E8F0F8"/><stop offset="1" stop-color="#F7FAFD"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="36"/></filter>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".94"/><stop offset="1" stop-color="#EDF4FF" stop-opacity=".82"/></linearGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#g)"/>
+  <circle cx="830" cy="470" r="210" fill="#4A82FF" fill-opacity=".16" filter="url(#blur)"/>
+  <text x="92" y="112" font-family="Arial" font-size="18" font-weight="700" letter-spacing="3" fill="#17212B">AURA / 01</text>
+  <text x="1108" y="112" text-anchor="end" font-family="Arial" font-size="16" fill="#6E8396">WORKSPACE SYSTEM</text>
+  <text x="92" y="282" font-family="Arial" font-size="86" font-weight="700" letter-spacing="-6" fill="#17212B">Less noise.</text>
+  <text x="92" y="364" font-family="Arial" font-size="86" font-weight="700" letter-spacing="-6" fill="#17212B">More signal.</text>
+  <text x="96" y="428" font-family="Arial" font-size="22" fill="#6E8396">A calm interface for turning scattered work into one clear system.</text>
+  <rect x="94" y="512" width="1012" height="710" rx="42" fill="url(#card)" stroke="#FFFFFF" stroke-opacity=".9"/>
+  <rect x="130" y="548" width="940" height="62" rx="20" fill="#FFFFFF" fill-opacity=".74"/>
+  <circle cx="164" cy="579" r="9" fill="#4A82FF"/>
+  <text x="190" y="586" font-family="Arial" font-size="17" font-weight="700" fill="#17212B">Today’s focus</text>
+  <text x="1036" y="586" text-anchor="end" font-family="Arial" font-size="15" fill="#6E8396">4 signals</text>
+  <rect x="130" y="642" width="570" height="250" rx="30" fill="#17212B"/>
+  <text x="170" y="696" font-family="Arial" font-size="14" letter-spacing="2" fill="#8EA3B7">PRIORITY</text>
+  <text x="170" y="760" font-family="Arial" font-size="34" font-weight="700" fill="#F8FBFF">Launch review</text>
+  <text x="170" y="803" font-family="Arial" font-size="18" fill="#A8B8C8">Three decisions still need an owner.</text>
+  <rect x="170" y="838" width="148" height="34" rx="17" fill="#4A82FF"/><text x="244" y="861" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="white">Open focus</text>
+  <rect x="728" y="642" width="342" height="250" rx="30" fill="#F7FAFD" stroke="#D8E5F0"/>
+  <text x="766" y="695" font-family="Arial" font-size="14" fill="#6E8396">Momentum</text>
+  <text x="766" y="766" font-family="Arial" font-size="58" font-weight="700" fill="#17212B">82%</text>
+  <path d="M766 830 C810 800 844 836 888 804 S960 758 1028 784" fill="none" stroke="#4A82FF" stroke-width="7" stroke-linecap="round"/>
+  <rect x="130" y="922" width="940" height="254" rx="30" fill="#F7FAFD" stroke="#D8E5F0"/>
+  <text x="166" y="974" font-family="Arial" font-size="14" fill="#6E8396">ACTIVE THREADS</text>
+  <g font-family="Arial"><text x="166" y="1030" font-size="18" font-weight="700" fill="#17212B">01  ·  Product narrative</text><text x="166" y="1074" font-size="18" font-weight="700" fill="#17212B">02  ·  Pricing logic</text><text x="166" y="1118" font-size="18" font-weight="700" fill="#17212B">03  ·  Launch QA</text></g>
+  <circle cx="1010" cy="1030" r="7" fill="#4A82FF"/><circle cx="1010" cy="1074" r="7" fill="#B5C5D3"/><circle cx="1010" cy="1118" r="7" fill="#B5C5D3"/>
+  <text x="94" y="1340" font-family="Arial" font-size="18" fill="#6E8396">SOFT DEPTH / CONTROLLED GLOW / OPEN SPACE</text>
+  <text x="1106" y="1340" text-anchor="end" font-family="Arial" font-size="18" font-weight="700" fill="#17212B">STYLE 02</text>
+</svg>
