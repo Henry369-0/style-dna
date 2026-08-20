@@ -1,87 +1,87 @@
-# Style DNA — Product Notes
+# Style DNA —— 产品说明
 
-## One-line definition
+## 一句话定义
 
-**Style DNA turns a reference image into reusable visual rules.**
+**Style DNA 把一张参考图变成可复用的视觉规则。**
 
-The user does not need to know professional design vocabulary. They only need to know: “I like this.” The product separates literal content from reusable visual language, explains why the reference works, and turns that judgment into a stable specification.
+用户不需要懂专业设计词汇，只需要知道“我喜欢这个”。产品把字面的内容与可复用的视觉语言分离开，解释为什么参考图成立，并把这种判断变成一份稳定的规范。
 
-## Problem
+## 问题
 
-People can usually recognize visual quality faster than they can describe it. Prompts like “make it premium,” “use this vibe,” or “make it more editorial” are too vague to reproduce consistently.
+人们通常能很快认出视觉质量，却很难描述它。“做得高级一点”“用这个感觉”“再编辑风一些”——这类需求太模糊，无法稳定复现。
 
-Style DNA translates subjective preference into executable rules across:
+Style DNA 把主观偏好翻译成可执行的规则，覆盖：
 
-- composition and spatial rhythm;
-- whitespace;
-- color roles and contrast;
-- typography personality;
-- texture and image treatment;
-- hierarchy and focal order;
-- mood with visual reasons;
-- negative constraints — what the style should avoid.
+- 构成与空间节奏；
+- 留白；
+- 色彩角色与对比；
+- 字体性格；
+- 质感与图像处理；
+- 层级与视觉顺序；
+- 带视觉依据的情绪；
+- 反向约束——这个风格应该避免什么。
 
-## Core product distinction
+## 核心产品区分
 
-### Content recognition
+### 内容识别
 
-> What is in the image?
+> 图里有什么？
 
 ### Style DNA
 
-> Why does this visual system feel the way it does, and how can those rules be reused elsewhere?
+> 这套视觉体系为什么给人这种感觉？这些规则怎样才能复用到别处？
 
-A landmark, person, literal headline, brand logo, or a specific chart is **content**. Asymmetric composition, low saturation, high whitespace, serif/sans contrast, paper grain, or restrained accent color are **style**.
+地标、人物、字面标题、品牌 logo 或某个具体图表是**内容**；非对称构图、低饱和、高留白、衬线/无衬线对比、纸纹质感、克制的点缀色是**风格**。
 
 ## MVP
 
-The first complete release includes:
+第一个完整版本包含：
 
-1. image upload;
-2. browser-side resize, dimensions, aspect ratio and palette extraction;
-3. multimodal analysis;
-4. media type recognition;
-5. content/style separation;
-6. Style Snapshot;
-7. composition, color, typography, texture, hierarchy and mood analysis;
-8. Why It Works;
-9. Negative Style DNA / Avoid;
-10. structured JSON output;
-11. AI-ready style prompt;
-12. three built-in examples that work without an API key;
-13. cross-medium translation examples.
+1. 图片上传；
+2. 浏览器端缩放、尺寸、宽高比与色板提取；
+3. 多模态分析；
+4. 媒介类型识别；
+5. 内容 / 风格分离；
+6. 风格快照；
+7. 构成、色彩、字体、质感、层级与情绪分析；
+8. 为什么它好看；
+9. 反向 Style DNA / 避免清单；
+10. 结构化 JSON 输出；
+11. AI 可用的风格 Prompt；
+12. 三个无需 API key 的内置示例；
+13. 跨媒介迁移示例。
 
-## Product principles
+## 产品原则
 
-### Rules > labels
+### 规则 > 标签
 
-“Minimal” is weak. “High whitespace, limited palette, strong alignment, low decorative density” is reusable.
+“极简”太弱。“高留白、有限色板、强对齐、低装饰密度”才是可复用的。
 
-### Confidence > fake precision
+### 置信度 > 虚假精确
 
-The product describes typography personality instead of pretending to identify an exact typeface from pixels.
+产品用字体性格来描述字体，而不是假装能从像素里认出具体字体。
 
-### Translation > cloning
+### 迁移 > 克隆
 
-The goal is not to replicate the reference. The goal is to preserve the underlying visual logic when the medium changes.
+目标不是复刻参考图，而是在媒介变化时保留底层的视觉逻辑。
 
-### Deterministic facts + AI judgment
+### 确定性事实 + AI 判断
 
-Code extracts facts that can be measured. The vision model interprets relationships, mood, hierarchy, and visual rationale.
+代码提取可以测量的客观事实；视觉模型诠释关系、情绪、层级与视觉依据。
 
-## Built-in visual atlas
+## 内置视觉图鉴
 
-The repository includes three deliberately different references:
+仓库包含三张刻意不同的参考图：
 
-- **Quiet Editorial** — warm print restraint;
-- **Nordic Data Minimal** — analytical, cool and grid-led;
-- **Soft Tech Blue** — luminous depth with low visual noise.
+- **Quiet Editorial** —— 温暖的印刷克制；
+- **Nordic Data Minimal** —— 理性、冷静、网格主导；
+- **Soft Tech Blue** —— 低噪音的层次光感。
 
-This makes the core promise testable without an API key: one protocol should produce useful output across different visual media.
+这让产品的核心承诺在无 API key 时也可验证：同一套协议应该能跨不同视觉媒介产出有用的结果。
 
-## Future directions
+## 未来方向
 
-- V2: optimized prompt packs for images, slides, web and charts;
-- V3: new-content upload + style application workflow;
-- V4: saved Style Library, Compare and Blend;
-- V5: Skill, API and richer cross-medium translation.
+- V2：针对图像、演示、网页与图表的优化 Prompt 包；
+- V3：上传新内容 + 风格应用工作流；
+- V4：风格库、对比与融合；
+- V5：Skill、API 与更丰富的跨媒介迁移。

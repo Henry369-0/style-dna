@@ -1,6 +1,6 @@
-# Deployment
+# 部署
 
-## Local
+## 本地运行
 
 ```bash
 npm install
@@ -8,9 +8,9 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Set `OPENAI_API_KEY` to enable real image analysis. Without a key, all bundled examples still work.
+设置 `OPENAI_API_KEY` 即可启用真实图像分析。没有 key 时，所有内置示例依然可用。
 
-## Production Node
+## 生产环境 Node
 
 ```bash
 npm install
@@ -18,12 +18,12 @@ npm run build
 npm start
 ```
 
-Configure the same environment variables on the server.
+在服务器上配置相同的环境变量。
 
 ## Vercel
 
-This repository is a standard Next.js application with a server route under `app/api/analyze/route.ts`, so it can be deployed as a normal Next.js project. Add `OPENAI_API_KEY` and optionally `OPENAI_MODEL` as server-side environment variables.
+本仓库是标准的 Next.js 应用，分析逻辑在 `app/api/analyze/route.ts` 这个服务端路由里，因此可以像普通 Next.js 项目一样部署。在服务端环境变量中添加 `OPENAI_API_KEY` 和可选的 `OPENAI_MODEL`。
 
-## Static hosting note
+## 静态托管说明
 
-The full product is not a pure static site because real analysis requires a server-side API route to keep the model key private. If you need a static portfolio-only build, use the bundled SVG references and demo JSON as the experience layer, but do not move the API key into client code.
+完整产品不是纯静态站点，因为真实分析需要一个服务端 API 路由来保护模型密钥。如果你只需要静态的作品集构建，可以把内置的 SVG 参考图和 demo JSON 当作体验层，但**不要把 API key 放进客户端代码**。

@@ -1,70 +1,70 @@
-# Style DNA Protocol
+# Style DNA 协议
 
-The protocol exists to stop a vision model from answering the wrong question.
+这套协议的存在，是为了防止视觉模型答错问题。
 
-## Step 1 — Identify the medium
+## 第一步 —— 识别媒介
 
-Poster, presentation, dashboard, web UI, mobile UI, illustration, photography or data visualization.
+海报、演示文稿、数据看板、网页 UI、移动端 UI、插画、摄影或数据可视化。
 
-Different media imply different emphasis. A dashboard needs density, grid and chart treatment; a poster needs composition, typography, texture and subject placement.
+不同媒介的侧重点不同。看板需要密度、网格与图表处理；海报需要构图、字体、质感与主体摆放。
 
-## Step 2 — Separate content from style
+## 第二步 —— 分离内容与风格
 
-The analyzer explicitly lists content only to prove it has separated it from the reusable style.
+分析器显式列出内容，只是为了证明它已经把内容与可复用的风格分开。
 
-**Content examples**
+**内容示例**
 
-- a building;
-- a person;
-- literal title copy;
-- a brand logo;
-- a specific KPI value.
+- 一栋建筑；
+- 一个人；
+- 字面的标题文案；
+- 品牌 logo；
+- 某个具体的 KPI 数值。
 
-**Style examples**
+**风格示例**
 
-- asymmetric grid;
-- muted warm-neutral palette;
-- high whitespace;
-- oversized serif display type;
-- subtle paper grain;
-- one restrained accent.
+- 非对称网格；
+- 低饱和暖中性色板；
+- 高留白；
+- 超大衬线标题字；
+- 细微纸纹；
+- 一个克制的点缀色。
 
-## Step 3 — Convert judgments into rules
+## 第三步 —— 把判断转成规则
 
-Bad output:
-
-```text
-Minimal
-Modern
-Premium
-```
-
-Useful output:
+差输出：
 
 ```text
-High outer whitespace
-Low decorative density
-One focal accent color
-Strong display/body size contrast
-Left-dominant alignment
-Soft image contrast
+极简
+现代
+高级
 ```
 
-## Step 4 — Explain Why It Works
+有用的输出：
 
-Mood labels are not enough. “Calm” should be tied to observable visual evidence such as low saturation, high whitespace and soft contrast.
+```text
+高外部留白
+低装饰密度
+一个焦点点缀色
+强烈的标题/正文字号对比
+左侧主导对齐
+柔和的图像对比
+```
 
-## Step 5 — Generate Negative Style DNA
+## 第四步 —— 解释为什么成立
 
-Avoid lists are first-class output because generation failures often come from adding the wrong visual tropes: heavy glow, glossy 3D, rainbow gradients, oversized rounded cards or over-sharpening.
+光有情绪标签不够。“平静”应该绑定到可观察的视觉证据，比如低饱和、高留白与柔和对比。
 
-## Step 6 — Translate, do not clone
+## 第五步 —— 生成反向 Style DNA
 
-A style rule can change implementation by medium:
+避免清单是一等公民输出，因为生成失败往往来自加错了视觉套路：厚重光晕、高光 3D、彩虹渐变、超大圆角卡片或过度锐化。
 
-- paper grain in a poster → subtle background texture on web;
-- editorial serif hierarchy → presentation headline/body hierarchy;
-- rounded UI language → chart label and legend treatment;
-- accent yellow → highlighted data signal.
+## 第六步 —— 迁移，不要克隆
 
-The protocol transfers logic, not literal pixels.
+一条风格规则可以随媒介改变实现方式：
+
+- 海报里的纸纹 → 网页上微妙的背景纹理；
+- 编辑衬线层级 → 演示文稿的标题 / 正文层级；
+- 圆角 UI 语言 → 图表标签与图例的处理；
+- 点缀黄 → 高亮的数据信号。
+
+协议迁移的是逻辑，不是字面的像素。

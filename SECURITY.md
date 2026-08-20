@@ -1,24 +1,24 @@
-# Security
+# 安全
 
-## API keys
+## API key
 
-Never commit `.env`, `.env.local`, model keys or other credentials. The browser must not receive `OPENAI_API_KEY`.
+永远不要提交 `.env`、`.env.local`、模型密钥或其他凭据。浏览器绝不能拿到 `OPENAI_API_KEY`。
 
-## Request limits
+## 请求限制
 
-The analysis route rejects oversized or malformed requests before any model call:
+分析路由在任何模型调用之前拒绝超大或畸形的请求：
 
-- JSON bodies larger than 6 MB are rejected with `413`;
-- image data URLs longer than ~5.5 MB are rejected with `413` (the browser already resizes to a 1600px JPEG);
-- invalid JSON bodies are rejected with `400`;
-- client-supplied metrics are re-validated server-side.
+- JSON body 超过 6 MB → 返回 `413`；
+- 图片 data URL 超过约 5.5 MB → 返回 `413`（浏览器已把图片缩放为 1600px JPEG）；
+- 非法 JSON → 返回 `400`；
+- 客户端传入的指标会在服务端重新校验。
 
-A simple per-instance rate limit (20 requests / 60 s per IP) returns `429` with `Retry-After`. It is a cost guardrail, not a security boundary — on serverless deployments the counter is per-instance, so pair it with platform-level rate limiting for production hardening.
+此外有一个简单的进程内限流（每 IP 每分钟 20 次），超出返回 `429` 并带 `Retry-After`。它是成本护栏，不是安全边界——在 Serverless 部署下计数器是分实例的，生产加固请配合平台级限流。
 
-## Uploaded images
+## 上传的图片
 
-The application does not intentionally persist uploaded references. Browser preprocessing produces a resized data URL for analysis and sends it only to the server route handling the request.
+应用不会刻意持久化上传的参考图。浏览器预处理产生一张缩放后的 data URL 用于分析，且只发送给处理该请求的服务端路由。
 
-## Reporting
+## 报告问题
 
-If you discover a security issue, avoid publishing sensitive reproduction details in a public issue until the risk can be assessed.
+如果发现安全问题，请先不要在任何公开 issue 中发布敏感复现细节，等风险评估完成后再公开。

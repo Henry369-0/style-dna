@@ -1,22 +1,22 @@
-# Contributing
+# 参与贡献
 
-Contributions are welcome when they make Style DNA more reliable, more explainable or easier to reuse.
+欢迎任何让 Style DNA 更可靠、更可解释或更容易复用的贡献。
 
-## Good contribution areas
+## 值得贡献的方向
 
-- better visual-analysis protocol wording;
-- schema improvements with clear migration rationale;
-- more diverse reference examples;
-- accessibility and responsive UI fixes;
-- robust deterministic color/layout extraction;
-- evaluation cases for content/style separation;
-- cross-medium translation rules.
+- 改进视觉分析协议的措辞；
+- 带清晰迁移理由的 Schema 改进；
+- 更多样化的参考示例；
+- 无障碍与响应式 UI 修复；
+- 更稳健的确定性色彩 / 布局提取；
+- 内容 / 风格分离的评测用例；
+- 跨媒介迁移规则。
 
-## Before opening a PR
+## 提交 PR 之前
 
 ```bash
 npm install
 npm run check
 ```
 
-Please keep pull requests focused. New features should preserve the project boundary: Style DNA is a parser and translator, not a general image editor.
+请保持 PR 聚焦。新功能应守住项目边界：Style DNA 是解析器和迁移器，不是通用图像编辑器。

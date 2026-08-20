@@ -3,11 +3,11 @@
 
 # Style DNA
 
-**See the style. Understand the system. Reuse the DNA.**
+**看懂风格 · 理解体系 · 复用 DNA**
 
-Turn visual inspiration into reusable design language.
+把视觉灵感变成可复用的设计语言。
 
-[Quick start](#quick-start) · [Product notes](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Protocol](docs/STYLE_DNA_PROTOCOL.md)
+[快速开始](#快速开始) · [产品说明](docs/PRODUCT.md) · [架构](docs/ARCHITECTURE.md) · [协议](docs/STYLE_DNA_PROTOCOL.md)
 
 <p>
   <img src="https://img.shields.io/badge/license-MIT-1b201d.svg" alt="License: MIT" />
@@ -18,252 +18,252 @@ Turn visual inspiration into reusable design language.
 </div>
 
 <p align="center">
-  <img src="docs/assets/cover.svg" alt="Style DNA project cover" width="100%" />
+  <img src="docs/assets/cover.svg" alt="Style DNA 项目封面" width="100%" />
 </p>
 
 <p align="center">
-  <img src="docs/assets/demo.gif" alt="Style DNA visual walkthrough" width="100%" />
+  <img src="docs/assets/demo.gif" alt="Style DNA 可视化演示" width="100%" />
 </p>
 
-## The problem
+## 要解决的问题
 
-People are often good at **judging** visual quality and bad at **describing** it.
+人们往往很擅长**判断**视觉质量，却不擅长**描述**它。
 
-> “I like this feeling.”  
-> “Can you make it look more like this?”  
-> “The spacing, colors and type feel right — I just cannot explain why.”
+> “我就喜欢这个感觉。”  
+> “能不能做得更像这个？”  
+> “间距、颜色和字体都很对——但我就是说不清为什么。”
 
-Those are real preferences, but weak production instructions.
+这些是真实存在的偏好，但作为生产指令太模糊了。
 
-Style DNA turns a reference into a reusable visual specification:
+Style DNA 把一张参考图变成一份可复用的视觉规范：
 
 ```text
-REFERENCE IMAGE
+参考图片
       ↓
-CONTENT ≠ STYLE
+内容 ≠ 风格
       ↓
-COMPOSITION · COLOR · TYPE · TEXTURE · HIERARCHY · MOOD · AVOID
+构成 · 色彩 · 字体 · 质感 · 层级 · 情绪 · 避免清单
       ↓
-STYLE DNA
+风格 DNA
       ↓
-HUMAN BRIEF · JSON · AI-READY PROMPT
+人可读的 Brief · JSON · AI 可直接使用的 Prompt
 ```
 
-The point is **not** to copy a reference image. The point is to extract the rules that make the reference feel the way it does.
+重点**不是**复制参考图，而是提取出“让这张图看起来是这种感觉”的规则。
 
 ---
 
-## Visual Atlas — no API key required
+## 视觉图鉴 —— 无需 API key
 
-The repository ships with three intentionally different examples, so the product can be explored before any model configuration.
+仓库内置了三张风格迥异的示例图，未配置任何模型之前就可以完整体验产品。
 
 <table>
   <tr>
-    <td width="33%"><img src="public/demo/editorial-poster.svg" alt="Quiet Editorial example" /></td>
-    <td width="33%"><img src="public/demo/nordic-data.svg" alt="Nordic Data Minimal example" /></td>
-    <td width="33%"><img src="public/demo/soft-tech.svg" alt="Soft Tech Blue example" /></td>
+    <td width="33%"><img src="public/demo/editorial-poster.svg" alt="Quiet Editorial 示例" /></td>
+    <td width="33%"><img src="public/demo/nordic-data.svg" alt="Nordic Data Minimal 示例" /></td>
+    <td width="33%"><img src="public/demo/soft-tech.svg" alt="Soft Tech Blue 示例" /></td>
   </tr>
   <tr>
-    <td><b>Quiet Editorial</b><br/><sub>Warm print restraint</sub></td>
-    <td><b>Nordic Data Minimal</b><br/><sub>Analytical, not sterile</sub></td>
-    <td><b>Soft Tech Blue</b><br/><sub>Depth without visual noise</sub></td>
+    <td><b>Quiet Editorial</b><br/><sub>温暖的印刷克制</sub></td>
+    <td><b>Nordic Data Minimal</b><br/><sub>理性而不冰冷</sub></td>
+    <td><b>Soft Tech Blue</b><br/><sub>没有视觉噪音的层次感</sub></td>
   </tr>
 </table>
 
-Each sample opens the **same analysis contract** while producing a different Style DNA. That is the product test: the protocol should generalize across posters, dashboards and interfaces instead of memorizing one aesthetic.
+每个示例走的是**同一套分析协议**，产出的却是不同的风格 DNA。这就是产品的检验标准：协议应该能泛化到海报、看板、界面等不同媒介，而不是只记住某一种审美。
 
 ---
 
-## What Style DNA returns
+## Style DNA 会返回什么
 
-### 1. Style Snapshot
+### 1. 风格快照（Style Snapshot）
 
-A five-second read:
-
-```text
-Editorial · Warm neutral · Asymmetric · High whitespace · Restrained accent
-```
-
-### 2. Executable visual rules
-
-Instead of stopping at `minimal` or `premium`, the output explains things like:
-
-- asymmetric editorial grid;
-- strong left alignment;
-- high outer whitespace;
-- low-saturation warm-neutral palette;
-- one restrained accent role;
-- oversized serif / compact sans hierarchy;
-- subtle matte paper texture;
-- soft image contrast;
-- low decorative density.
-
-### 3. Why It Works
-
-Mood is tied to visible evidence. For example, “calm” is not just a label — it may be explained by high whitespace, soft contrast and low saturation.
-
-### 4. Negative Style DNA
-
-The analyzer also generates what **not** to add:
+五秒钟读懂一张图：
 
 ```text
-Avoid neon colors
-Avoid heavy gradients
-Avoid plastic 3D
-Avoid over-sharpening
-Avoid oversized glossy cards
+编辑风 · 暖中性 · 非对称 · 高留白 · 克制点缀色
 ```
 
-### 5. Portable output
+### 2. 可执行的视觉规则
 
-- human-readable visual brief;
-- structured JSON;
-- AI-ready prompt that explicitly preserves new content and transfers style only.
+不是停在 `极简` 或 `高级感` 这种标签上，而是给出类似这样的可执行描述：
+
+- 非对称编辑网格；
+- 强左对齐；
+- 高外部留白；
+- 低饱和暖中性色板；
+- 一个克制的点缀色角色；
+- 超大衬线标题 / 紧凑无衬线正文的层级；
+- 细微的哑光纸纹质感；
+- 柔和的图像对比度；
+- 低装饰密度。
+
+### 3. 为什么它好看（Why It Works）
+
+情绪与可见的证据绑定。例如“平静”不是空标签——它可能由高留白、柔和对比、低饱和来解释。
+
+### 4. 反向风格 DNA（Negative Style DNA）
+
+分析器同时生成**不要加什么**：
+
+```text
+避免霓虹色
+避免厚重渐变
+避免塑料感 3D
+避免过度锐化
+避免超大高光卡片
+```
+
+### 5. 可移植的输出
+
+- 人可读的视觉 Brief；
+- 结构化 JSON；
+- AI 可直接使用的 Prompt，明确保留新内容、只迁移风格。
 
 ---
 
-## How it works
+## 工作原理
 
 <p align="center">
-  <img src="docs/assets/architecture.svg" alt="Style DNA architecture" width="100%" />
+  <img src="docs/assets/architecture.svg" alt="Style DNA 架构图" width="100%" />
 </p>
 
-The product deliberately splits measurement from judgment:
+产品刻意把「测量」和「判断」分开：
 
-**Browser code** handles deterministic facts:
+**浏览器端代码处理确定的事实：**
 
-- original dimensions;
-- aspect ratio;
-- coarse dominant palette;
-- upload validation;
-- resize/compression before model input.
+- 原始尺寸；
+- 宽高比；
+- 粗粒度主色板；
+- 上传校验；
+- 送入模型前的缩放 / 压缩。
 
-**Vision reasoning** handles abstract visual relationships:
+**视觉推理负责抽象的视觉关系：**
 
-- media type;
-- content/style separation;
-- composition and spatial rhythm;
-- typography personality;
-- texture and image treatment;
-- hierarchy and mood;
-- negative constraints;
-- explanation of why the design works.
+- 媒介类型；
+- 内容 / 风格分离；
+- 构成与空间节奏；
+- 字体性格；
+- 质感与图像处理；
+- 层级与情绪；
+- 反向约束；
+- 解释为什么这样设计是成立的。
 
-> **The model is a capability. The protocol + schema + deterministic preprocessing are the product layer.**
+> **模型只是能力，协议 + 规范 + 确定性的预处理才是产品层。**
 
 ---
 
-## Content ≠ Style
+## 内容 ≠ 风格
 
-If a reference contains Tokyo Tower, a taxi and a yellow title, Style DNA does **not** treat those literal objects as reusable visual rules.
+如果参考图里有东京塔、一辆出租车和一个黄色标题，Style DNA **不会**把这些具体对象当作可复用的视觉规则。
 
-| Content | Style |
+| 内容 | 风格 |
 | --- | --- |
-| Tokyo Tower | asymmetric composition |
-| taxi | restrained accent color |
-| literal title | oversized serif hierarchy |
-| street scene | muted image treatment |
-| specific logo | high negative space |
+| 东京塔 | 非对称构图 |
+| 出租车 | 克制的点缀色 |
+| 字面标题 | 超大衬线层级 |
+| 街景 | 低饱和的图像处理 |
+| 具体 logo | 高负空间 |
 
-This separation is important because the next piece of content may be a presentation, a dashboard or an entirely different city.
+这个分离很重要，因为下一份内容可能是演示文稿、数据看板，或者另一座完全不同的城市。
 
 ---
 
-## Cross-medium translation
+## 跨媒介迁移
 
 <p align="center">
-  <img src="docs/assets/translation.svg" alt="Cross-medium Style DNA translation" width="100%" />
+  <img src="docs/assets/translation.svg" alt="Style DNA 跨媒介迁移示意" width="100%" />
 </p>
 
-Style transfer should not mean pixel cloning.
+风格迁移不等于像素克隆。
 
-A poster rule can be reinterpreted by medium:
+一条海报规则可以按媒介重新演绎：
 
-- paper grain → subtle web background texture;
-- editorial type hierarchy → presentation headline/body hierarchy;
-- restrained mustard accent → one chart highlight;
-- asymmetric print composition → offset but grid-safe landing page structure.
+- 纸张颗粒 → 网页上微妙的背景纹理；
+- 编辑字体层级 → 演示文稿的标题 / 正文层级；
+- 克制的芥末黄点缀 → 图表里唯一的高亮数据点；
+- 非对称印刷构图 → 错落但安全的落地页网格。
 
-The **rule moves; the literal reference does not.**
-
----
-
-## MVP scope
-
-### Included
-
-- [x] Drag-and-drop image upload
-- [x] JPG / PNG / WebP validation
-- [x] Browser-side resize before analysis
-- [x] Dimensions + aspect-ratio extraction
-- [x] Deterministic coarse palette extraction
-- [x] Multimodal media-type recognition
-- [x] Content / Style separation
-- [x] Style Snapshot
-- [x] Composition & whitespace analysis
-- [x] Color system
-- [x] Typography personality + confidence
-- [x] Texture & image treatment
-- [x] Visual hierarchy
-- [x] Mood with visual rationale
-- [x] Why It Works
-- [x] Negative Style DNA / Avoid
-- [x] Copy structured DNA
-- [x] Export JSON
-- [x] Generate reusable style prompt
-- [x] Three built-in visual examples
-- [x] Cross-medium translation gallery
-- [x] Shared JSON Schema
-- [x] Skill draft
-- [x] CI validation
-
-### Deliberately not included yet
-
-- accounts;
-- cloud saving;
-- community/feed;
-- style marketplace;
-- automatic image generation;
-- Compare / Blend;
-- full image editing;
-- training or fine-tuning a custom model.
+**规则在迁移，字面的参考图不会。**
 
 ---
 
-## Quick start
+## MVP 范围
 
-Requires **Node.js 20+** (CI runs on Node 22).
+### 已包含
 
-### 1. Install
+- [x] 拖拽上传图片
+- [x] JPG / PNG / WebP 校验
+- [x] 浏览器端分析前缩放
+- [x] 尺寸 + 宽高比提取
+- [x] 确定性的粗粒度色板提取
+- [x] 多模态媒介类型识别
+- [x] 内容 / 风格分离
+- [x] 风格快照（Style Snapshot）
+- [x] 构成与留白分析
+- [x] 色彩体系
+- [x] 字体性格 + 置信度
+- [x] 质感与图像处理
+- [x] 视觉层级
+- [x] 带视觉依据的情绪
+- [x] 为什么它好看（Why It Works）
+- [x] 反向风格 DNA / 避免清单
+- [x] 复制结构化 DNA
+- [x] 导出 JSON
+- [x] 生成可复用的风格 Prompt
+- [x] 三个内置视觉示例
+- [x] 跨媒介迁移画廊
+- [x] 共享 JSON Schema
+- [x] Skill 草稿
+- [x] CI 校验
+
+### 暂不包含
+
+- 账号体系；
+- 云端保存；
+- 社区 / 信息流；
+- 风格市场；
+- 自动生图；
+- 对比 / 融合（Compare / Blend）；
+- 完整图像编辑；
+- 训练或微调自定义模型。
+
+---
+
+## 快速开始
+
+需要 **Node.js 20+**（CI 使用 Node 22）。
+
+### 1. 安装
 
 ```bash
 npm install
 ```
 
-### 2. Configure real analysis
+### 2. 配置真实分析
 
 ```bash
 cp .env.example .env.local
 ```
 
-Add your server-side key:
+填入服务端密钥：
 
 ```bash
 OPENAI_API_KEY=your_key_here
 OPENAI_MODEL=gpt-5.6-terra
 ```
 
-### 3. Run
+### 3. 启动
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+打开 `http://localhost:3000`。
 
-No key yet? The three bundled examples still provide the complete result/export experience.
+还没有 key？三个内置示例依然提供完整的结果 / 导出体验。
 
-### Quality check
+### 质量检查
 
 ```bash
 npm run validate
@@ -273,33 +273,33 @@ npm run build
 
 ---
 
-## Repository structure
+## 仓库结构
 
 ```text
 style-dna/
 ├── app/
-│   ├── api/analyze/route.ts       # server-side multimodal analysis
-│   ├── globals.css                # editorial visual system
+│   ├── api/analyze/route.ts       # 服务端多模态分析
+│   ├── globals.css                # 编辑风视觉系统
 │   ├── layout.tsx
-│   └── page.tsx                   # upload, atlas, translation, results
+│   └── page.tsx                   # 上传、图鉴、迁移、结果
 ├── public/
-│   ├── demo/                      # built-in visual references
-│   ├── translation/               # cross-medium examples
+│   ├── demo/                      # 内置视觉参考图
+│   ├── translation/               # 跨媒介示例
 │   ├── logo-mark.svg
 │   └── icon.svg
 ├── lib/
-│   ├── demo.ts                    # bundled Style DNA examples
-│   ├── prompt.ts                  # AI-ready style prompt generator
+│   ├── demo.ts                    # 内置 Style DNA 示例
+│   ├── prompt.ts                  # AI 风格 Prompt 生成器
 │   └── types.ts
 ├── schemas/
-│   └── style_dna.schema.json      # canonical machine-readable contract
+│   └── style_dna.schema.json      # 权威机器可读契约
 ├── prompts/
-│   └── style-analysis.md          # reusable analysis protocol
+│   └── style-analysis.md          # 可复用的分析协议
 ├── skill/
-│   └── SKILL.md                   # agent / skill draft
-├── examples/                      # compact example outputs
+│   └── SKILL.md                   # Agent / Skill 草稿
+├── examples/                      # 精简示例输出
 ├── docs/
-│   ├── assets/                    # README visuals
+│   ├── assets/                    # README 配图
 │   ├── PRODUCT.md
 │   ├── ARCHITECTURE.md
 │   ├── STYLE_DNA_PROTOCOL.md
@@ -313,11 +313,11 @@ style-dna/
 
 ---
 
-## The Style DNA contract
+## Style DNA 契约
 
-The canonical schema lives at [`schemas/style_dna.schema.json`](schemas/style_dna.schema.json).
+权威规范位于 [`schemas/style_dna.schema.json`](schemas/style_dna.schema.json)。
 
-A compact example:
+一个精简示例：
 
 ```json
 {
@@ -346,45 +346,45 @@ A compact example:
 }
 ```
 
-The schema matters because visual understanding only becomes reusable when it has a stable representation that can move between a web app, prompt pipeline, agent skill or future API.
+Schema 之所以重要，是因为视觉理解只有在拥有稳定表示之后，才能往返于 Web 应用、Prompt 管线、Agent Skill 或未来的 API 之间。
 
 ---
 
-## Product principles
+## 产品原则
 
-### Rules > labels
+### 规则 > 标签
 
-`Minimal` is weak output. `High whitespace + limited palette + low decorative density + strong alignment` is actionable.
+`极简` 是弱输出。`高留白 + 有限色板 + 强对齐 + 低装饰密度` 才是可执行的。
 
-### Confidence > fake precision
+### 置信度 > 虚假精确
 
-Typography is described by personality and hierarchy rather than inventing an exact font name.
+字体用性格与层级来描述，而不是凭空捏造一个具体字体名。
 
-### Translation > cloning
+### 迁移 > 克隆
 
-The long-term goal is cross-medium interpretation, not replication of reference pixels.
+长期目标是跨媒介诠释，而不是复制参考图的像素。
 
-### Visual product, visual README
+### 视觉产品，视觉 README
 
-A project about design should not explain itself through walls of text alone. The repo therefore includes real visual references, a visual atlas, cross-medium examples and diagram assets as part of the product surface.
+一个关于设计的项目，不该只用成片的文字解释自己。仓库因此把真实视觉参考、视觉图鉴、跨媒介示例和图解资源都作为产品表面的一部分。
 
 ---
 
-## Roadmap
+## 路线图
 
 ```text
-V1  Reference → Style DNA
-V2  DNA → optimized prompts for Image / Slides / Web / Charts
-V3  Reference → DNA → New Content → Apply
-V4  Style Library / Compare / Blend
-V5  Skill + API + richer cross-medium translation
+V1  参考图 → Style DNA
+V2  DNA → 针对 图像 / 演示 / 网页 / 图表 的优化 Prompt
+V3  参考图 → DNA → 新内容 → 应用
+V4  风格库 / 对比 / 融合
+V5  Skill + API + 更丰富的跨媒介迁移
 ```
 
 ---
 
-## Interview-sized explanation
+## 一句话版本
 
-> People are often good at judging whether a design looks good but bad at describing aesthetics in professional language. I built Style DNA to separate a reference image's content from its visual system, then translate composition, color, typography, whitespace, texture and hierarchy into structured, reusable rules. The point is not image recognition; it is turning a one-time visual impression into an asset that can be reused across images, presentations, websites and data visualization.
+> 人们往往擅长判断一个设计好不好看，却不擅长用专业语言描述审美。我做 Style DNA 是为了把参考图的内容与视觉系统分离开，再把构图、色彩、字体、留白、质感与层级翻译成结构化、可复用的规则。重点不是图像识别，而是把一次性的视觉印象，变成可以在图像、演示文稿、网站和数据可视化之间复用的资产。
 
 ## License
 

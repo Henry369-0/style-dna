@@ -1,76 +1,76 @@
-# Architecture
+# 架构
 
-## System boundary
+## 系统边界
 
-Style DNA is intentionally small. It is not an image editor and it does not train a model. The product layer is the analysis protocol, data contract, deterministic preprocessing and rendering experience around a multimodal model.
+Style DNA 刻意保持小巧。它不是图像编辑器，也不训练模型。产品层是围绕多模态模型的分析协议、数据契约、确定性预处理与渲染体验。
 
-## Request flow
+## 请求流程
 
 ```text
-Reference image
+参考图
    │
-   ├── Browser preprocessing
-   │     ├── validate file type / size
-   │     ├── preserve original dimensions
-   │     ├── calculate aspect ratio
-   │     ├── extract coarse palette
-   │     └── resize to max 1600px for model input
+   ├── 浏览器预处理
+   │     ├── 校验文件类型 / 大小
+   │     ├── 保留原始尺寸
+   │     ├── 计算宽高比
+   │     ├── 提取粗粒度色板
+   │     └── 缩放至最长边 1600px 供模型输入
    │
    └── POST /api/analyze
-         ├── fixed visual-analysis protocol
-         ├── deterministic metrics as evidence
-         ├── image input
-         ├── structured JSON schema
-         └── normalization / fallback guardrails
+         ├── 固定的视觉分析协议
+         ├── 确定性指标作为证据
+         ├── 图像输入
+         ├── 结构化 JSON Schema
+         └── 归一化 / 兜底护栏
                    │
                    ▼
                 Style DNA
               ┌────┼─────┐
               ▼    ▼     ▼
-            Cards JSON  Prompt
+           卡片  JSON  Prompt
 ```
 
-## Why browser preprocessing exists
+## 为什么要有浏览器预处理
 
-Image dimensions, aspect ratio and coarse palette do not require model judgment. Extracting them locally has three benefits:
+图片尺寸、宽高比和粗粒度色板不需要模型判断。在本地提取有三个好处：
 
-- consistent evidence;
-- lower image payload after resize;
-- a clearer split between measurement and interpretation.
+- 证据一致；
+- 缩放后图像载荷更小；
+- 「测量」与「诠释」的边界更清晰。
 
-The palette algorithm is intentionally coarse. It quantizes sampled pixels and filters near-duplicate candidates. It is not a replacement for a color-science pipeline; it is deterministic context for the model and UI.
+色板算法刻意粗糙：它对采样像素做量化并过滤相近候选。它不是色彩科学管线的替代品，而是给模型和 UI 的确定性上下文。
 
-## Why the server route exists
+## 为什么要有服务端路由
 
-The API key must never be embedded in browser JavaScript. The client sends the resized data URL and metrics to a server-side Next.js route, which then calls the OpenAI Responses API.
+API key 绝不能嵌进浏览器 JavaScript。客户端把缩放后的 data URL 和指标发给服务端 Next.js 路由，由它调用 OpenAI Responses API。
 
-## Output contract
+## 输出契约
 
-`schemas/style_dna.schema.json` is the canonical machine-readable shape. The same concepts are reflected in:
+`schemas/style_dna.schema.json` 是权威的机器可读结构。同一套概念贯穿：
 
-- the analysis route;
-- TypeScript types;
-- demo examples;
-- prompt generator;
-- the Skill draft.
+- 分析路由；
+- TypeScript 类型；
+- demo 示例；
+- Prompt 生成器；
+- Skill 草稿。
 
-This is the core architecture idea: **visual interpretation becomes portable only after it has a stable representation.**
+这是核心架构思想：**视觉诠释只有在拥有稳定表示之后才能被移植。**
 
-## Failure handling
+## 失败处理
 
-- unsupported upload → client-side rejection;
-- image > 12 MB → client-side rejection;
-- JSON body > 6 MB or image data URL > ~5.5 MB → server-side `413`;
-- invalid JSON or missing image data URL → server-side `400`;
-- more than 20 requests per IP per minute → server-side `429` (in-memory per-instance rate limit);
-- missing API key → server returns a clear 503 and the built-in demos remain usable;
-- model output → normalized before the UI consumes it;
-- invalid palette values → ignored, deterministic client palette retained.
+- 不支持的上传 → 客户端拒绝；
+- 图片 > 12 MB → 客户端拒绝；
+- JSON body > 6 MB 或图片 data URL > ~5.5 MB → 服务端返回 `413`；
+- JSON 非法或缺少图片 data URL → 服务端返回 `400`；
+- 单 IP 每分钟超过 20 次请求 → 服务端返回 `429`（进程内限流）；
+- 缺少 API key → 服务端返回明确的 503，内置 demo 仍可用；
+- 模型输出 → 在 UI 消费前归一化；
+- 非法色值 → 忽略，保留确定性客户端色板。
 
-## Privacy
+## 隐私
 
-- no login or database;
-- uploaded references are not stored by the application;
-- image resizing and palette extraction happen in the browser;
-- API keys remain server-side;
-- demo mode requires no external request.
+- 无登录、无数据库；
+- 上传的参考图不会被应用持久化存储；
+- 图片缩放与色板提取都在浏览器完成；
+- API key 始终留在服务端；
+- demo 模式不需要任何外部请求。
