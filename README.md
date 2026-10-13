@@ -271,6 +271,15 @@ npm run lint
 npm run build
 ```
 
+启动本地服务后，如果已安装 Playwright CLI，可用独立会话验证图片切换、失败上传和手机宽度，无需模型密钥：
+
+```sh
+playwright-cli -s=style-dna-check open http://localhost:3000
+playwright-cli -s=style-dna-check run-code --filename=tests/reference-lifecycle.browser.js
+```
+
+该回归使用生成的测试图片与 mock 分析响应；它检查 UI 中图片和结果的一致性，不评估真实视觉模型的分析质量。
+
 ---
 
 ## 仓库结构

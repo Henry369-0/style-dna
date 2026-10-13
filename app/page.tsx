@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, DragEvent, ReactNode, useMemo, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { DEMO_STYLES, type DemoStyle } from "../lib/demo";
 import { buildStylePrompt } from "../lib/prompt";
 import type { ClientImageMetrics, StyleDNA } from "../lib/types";
@@ -27,8 +27,17 @@ function gcd(a: number, b: number): number {
 }
 
 async function prepareImage(file: File): Promise<{ dataUrl: string; previewUrl: string; metrics: ClientImageMetrics }> {
-  const image = document.createElement("img");
   const objectUrl = URL.createObjectURL(file);
+  try {
+    return await readPreparedImage(objectUrl);
+  } catch (error) {
+    URL.revokeObjectURL(objectUrl);
+    throw error;
+  }
+}
+
+async function readPreparedImage(objectUrl: string): Promise<{ dataUrl: string; previewUrl: string; metrics: ClientImageMetrics }> {
+  const image = document.createElement("img");
   image.src = objectUrl;
   await image.decode();
 
@@ -119,18 +128,42 @@ const TRANSLATIONS = [
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const referenceVersion = useRef(0);
+  const previewUrl = useRef<string | null>(null);
+  const analysisRequest = useRef<AbortController | null>(null);
   const [fileName, setFileName] = useState("");
   const [preview, setPreview] = useState<string>("");
   const [imageData, setImageData] = useState("");
   const [metrics, setMetrics] = useState<ClientImageMetrics | null>(null);
   const [result, setResult] = useState<StyleDNA | null>(null);
   const [loading, setLoading] = useState(false);
+  const [preparing, setPreparing] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState("");
   const [dragging, setDragging] = useState(false);
   const [activeDemo, setActiveDemo] = useState<string>("");
 
   const prompt = useMemo(() => (result ? buildStylePrompt(result) : ""), [result]);
+
+  useEffect(() => () => {
+    referenceVersion.current++;
+    analysisRequest.current?.abort();
+    if (previewUrl.current) URL.revokeObjectURL(previewUrl.current);
+  }, []);
+
+  const selectReference = () => {
+    referenceVersion.current++;
+    analysisRequest.current?.abort();
+    analysisRequest.current = null;
+    setLoading(false);
+    setPreparing(false);
+    return referenceVersion.current;
+  };
+
+  const releasePreview = () => {
+    if (previewUrl.current) URL.revokeObjectURL(previewUrl.current);
+    previewUrl.current = null;
+  };
 
   const handleFile = async (file?: File) => {
     if (!file) return;
@@ -142,22 +175,38 @@ export default function Home() {
       setError("Please keep the source image under 12 MB.");
       return;
     }
+    const version = selectReference();
+    setPreparing(true);
     setError("");
-    setResult(null);
-    setActiveDemo("");
-    setFileName(file.name);
     try {
       const prepared = await prepareImage(file);
+      if (version !== referenceVersion.current) {
+        URL.revokeObjectURL(prepared.previewUrl);
+        return;
+      }
+      releasePreview();
+      previewUrl.current = prepared.previewUrl;
+      setResult(null);
+      setActiveDemo("");
+      setFileName(file.name);
       setPreview(prepared.previewUrl);
       setImageData(prepared.dataUrl);
       setMetrics(prepared.metrics);
-      window.setTimeout(() => document.getElementById("input")?.scrollIntoView({ behavior: "smooth", block: "start" }), 40);
+      window.setTimeout(() => {
+        if (version === referenceVersion.current) document.getElementById("input")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 40);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not read this image.");
+      if (version === referenceVersion.current) setError(`${e instanceof Error ? e.message : "Could not read this image."} Your previous reference is still selected.`);
+    } finally {
+      if (version === referenceVersion.current) setPreparing(false);
     }
   };
 
-  const onInput = (event: ChangeEvent<HTMLInputElement>) => handleFile(event.target.files?.[0]);
+  const onInput = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    return handleFile(file);
+  };
   const onDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragging(false);
@@ -165,7 +214,12 @@ export default function Home() {
   };
 
   const analyze = async () => {
-    if (!imageData || !metrics) return;
+    if (!imageData || !metrics || loading || preparing) return;
+    const version = referenceVersion.current;
+    const request = new AbortController();
+    analysisRequest.current?.abort();
+    analysisRequest.current = request;
+    const isCurrent = () => version === referenceVersion.current && analysisRequest.current === request;
     setLoading(true);
     setError("");
     try {
@@ -173,19 +227,28 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: imageData, metrics }),
+        signal: request.signal,
       });
       const data = await response.json();
+      if (!isCurrent()) return;
       if (!response.ok) throw new Error(data.error || "Analysis failed.");
       setResult(data.result);
-      window.setTimeout(() => document.getElementById("analysis")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+      window.setTimeout(() => {
+        if (version === referenceVersion.current) document.getElementById("analysis")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Analysis failed.");
+      if (isCurrent() && !request.signal.aborted) setError(e instanceof Error ? e.message : "Analysis failed.");
     } finally {
-      setLoading(false);
+      if (isCurrent()) {
+        analysisRequest.current = null;
+        setLoading(false);
+      }
     }
   };
 
   const loadDemo = (demo: DemoStyle, shouldScroll = true) => {
+    const version = selectReference();
+    releasePreview();
     setFileName(`${demo.id}.svg`);
     setPreview(demo.image);
     setImageData("");
@@ -193,7 +256,9 @@ export default function Home() {
     setResult(demo.analysis);
     setActiveDemo(demo.id);
     setError("");
-    if (shouldScroll) window.setTimeout(() => document.getElementById("analysis")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    if (shouldScroll) window.setTimeout(() => {
+      if (version === referenceVersion.current) document.getElementById("analysis")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
   };
 
   const doCopy = async (text: string, label: string) => {
@@ -294,7 +359,7 @@ export default function Home() {
             </div>
             {metrics?.palette?.length ? <div className="palette-block"><p className="eyebrow">DETERMINISTIC PALETTE</p><div className="palette-preview">{metrics.palette.map((hex) => <span key={hex} style={{ background: hex }} title={hex} />)}</div></div> : null}
             <div className="input-actions">
-              <button className="primary" onClick={analyze} disabled={!imageData || loading}>{loading ? <><span className="spinner" /> Reading the visual system…</> : <><Icon name="spark" /> Analyze Style DNA</>}</button>
+              <button className="primary" onClick={analyze} disabled={!imageData || loading || preparing}>{preparing ? <><span className="spinner" /> Preparing the reference…</> : loading ? <><span className="spinner" /> Reading the visual system…</> : <><Icon name="spark" /> Analyze Style DNA</>}</button>
               <div className="demo-shortcuts">{DEMO_STYLES.map((demo) => <button key={demo.id} onClick={() => loadDemo(demo)}>{demo.name}</button>)}</div>
             </div>
             {error ? <p className="error">{error}</p> : <p className="privacy-note"><Icon name="check" /> Images are resized in-browser. API keys stay server-side. Demo samples need no key.</p>}
