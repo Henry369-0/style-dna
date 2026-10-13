@@ -281,6 +281,7 @@ h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(42px, 5vw,
 }
 
 @media (max-width: 620px) {
+  .hero { overflow-x: clip; }
   .brand > span:last-child { display: none; }
   .hero-copy { font-size: 16px; }
   .hero-actions { display: grid; }
